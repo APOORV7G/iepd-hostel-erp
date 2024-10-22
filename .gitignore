@@ -3,3 +3,5 @@
 .idea/iepd-hostel-erp.iml
 /.idea
 /node_modules
+.venv
+__pycache__
