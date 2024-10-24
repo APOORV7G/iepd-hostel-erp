@@ -26,7 +26,7 @@ module.exports = {
         'white': '#FFFFFF',
         },
     },
-
+/* secret ;) manya jain*/
   },
   plugins: [require('daisyui')],
   daisyui: {
