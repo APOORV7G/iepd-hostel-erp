@@ -3,4 +3,6 @@
 .idea/iepd-hostel-erp.iml
 /.idea
 /node_modules
-__pycache__/app.cpython-312.pyc
+.venv
+__pycache__
+__pycache__/app.cpython-313.pyc
