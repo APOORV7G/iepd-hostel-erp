@@ -1,10 +1,433 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="emerald">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Accommodation Section</title>
+  <!-- Bootstrap CSS for styling -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous"/>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>  <style>
+    /* Background styling */
+    .b1 {
+      background-image: url("https://img.freepik.com/premium-photo/hotel-room-images-background-copy-space_1179130-709118.jpg?w=900");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .b2{
+            background-image: url("https://img.freepik.com/premium-photo/indigenism-radical-houses-modular-village-structure_1015255-271028.jpg?w=1060");
+            background-size: cover;
+           background-position: center;
+           background-repeat: no-repeat;
+            min-height: 100vh;
+         display: flex;
+                    }
+    /* Text styling */
+    .section-title {
+      font-style: italic;
+      font-family: serif;
+      color: #D4A76A;
+      font-size: 1.875rem;
+      font-weight: bold;
+      text-align: center;
+    }
+    
+    
+.c{
+    margin:100px 0 0 200px;
+    width:70%;
+    height:450px;
+    display:flex;
+    justify-content:center;
+    gap:10px;
+   }
+   .c img{
+    width:20%;
+    height:100%;
+    object-fit:cover;
+    border-radius:10px;
+    border:2px solid rgba(255,255,255,0.6);
+    transition:all ease-in-out 0.5s;
+   }
+   .c img:hover{
+    width:40%;
+   }
+    /* Individual amenity card styling */
+    .amenity-card {
+      background-color: white;
+      padding: 20px;
+      border-radius: 10px;
+      text-align: center;
+      width: 700px;
+      height:500px;
+      box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    }
+    .amenity-icon {
+      width: 80px;
+      height: 80px;
+      margin: 0 auto 15px;
+    }
+    .amenity-title {
+      font-size: 1.25rem;
+      font-weight: bold;
+      margin-top: 10px;
+      color: #333;
+    }
+    .amenity-description {
+      font-size: 0.875rem;
+      color: #666;
+    }
+    .body1 {
+            background-color: #000a1f;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            padding: 0 20px;
+            color: #ffffff;
+            font-family: Arial, sans-serif;
+        }
+
+        .carousel-container {
+            width: 700px; /* Fixed width for a balanced layout */
+            height: 700px; /* Fixed height to maintain consistency */
+            overflow: hidden;
+            border-radius: 15px;
+            margin-right: 20px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .carousel {
+            display: flex;
+            transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+
+        .carousel-item {
+            min-width: 100%;
+            flex: 0 0 auto;
+        }
+
+        .carousel-item img {
+            width: 100%;
+            height: auto; /* Preserve aspect ratio */
+            object-fit: cover; /* Ensures images fill container while preserving aspect ratio */
+            border-radius: 15px;
+            border: 2px solid #ffffff;
+        }
+
+        .content {
+            width: 450px;
+            height:400px;
+            padding: 20px;
+            margin:30px;
+            border-radius: 10px;
+            background-color: rgba(255, 255, 255, 0.1);
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .content h2 {
+            font-size: 24px;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        .content h3 {
+            font-size: 20px;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        .content ul {
+            list-style-type: disc;
+            padding-left: 20px;
+        }
+
+        .content ul li {
+            margin-bottom: 8px;
+        }
+  </style>
 </head>
 <body>
-hi i am harshu
+  <!-- Main Section -->
+    <div id="sectionm">
+      <div class="b1">
+
+        <!-- Introductory Text and Logo -->
+        <div class="text-center">
+          <h1 class="text-5xl font-bold text-gray-800 leading-snug mb-4">
+            <img src="https://rvu.edu.in/wp-content/themes/rvu/images/rvu-logo.png" alt="RV University Logo" class="mx-auto">
+          </h1>
+          <h2 class="section-title">HOSTEL MANAGEMENT</h2>
+          <p class="section-title">
+            where <span class="font-semibold">LIVING MADE EASY</span>
+          </p>
+          <button class="btn btn-primary mt-4" onclick="display('section1')">DIVE IN</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="section1">
+      <div class="b2 d-flex flex-column align-items-center">
+        <div class="d-flex flex-row justify-content-center">
+          <div class="c d-flex flex-row justify-content-center">
+            <img src="https://img.freepik.com/premium-photo/dormitory-facilities-bedroom-professional-photography_925376-46618.jpg?w=900" onclick="display('sectionroom')" />
+            <img src="https://img.freepik.com/free-photo/view-gym-room-training-sports_23-2151699495.jpg?t=st=1730392142~exp=1730395742~hmac=ac1b275d383b986d2e5725b1f443d974b13dd2d1f47c10f4311f0c57e1b21199&w=900" onclick="display('sectionfacilities')" />
+            <img src="https://img.freepik.com/premium-photo/delicious-grilled-potato-slices-with-garlic-spices-herbs_73989-40383.jpg?w=900" onclick="display('sectionmenu')" />
+            <img src="https://img.freepik.com/free-vector/flat-wifi-concept_23-2148177516.jpg?t=st=1730392245~exp=1730395845~hmac=bec95e4fb0e12b1c8de20d903085f33a063874a347106451a324411bfda195c1&w=740" onclick="display('sectionamenities')" />
+          </div>
+        </div>
+        <div class="mt-3">
+          <button class="btn btn-primary" onclick="display('sectionm')">Go Back</button>
+        </div>
+      </div>
+    </div>
+    
+    
+      </div>
+      <div id="sectionroom">
+        <div class="b3">
+          <button class="btn btn-primary mt-4" onclick="display('section1')">go back</button>
+          <h2 class="text-4xl font-bold text-center text-gray-800 mb-8 bg-white p-4 rounded-lg shadow">Hostels & Room Details</h2> <!-- Added background, padding, rounded corners, and shadow to the heading -->
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <!-- Millennial Coral Girls Hostel -->
+      <div class="rounded-lg shadow-lg p-6 border border-gray-300 bg-white hover:shadow-2xl transition-shadow duration-300">
+        <h3 class="text-3xl font-semibold text-gray-800">Millennial Coral Girls Hostel</h3>
+        <p class="text-lg text-gray-600 mt-2">Comfortable accommodation with modern amenities for girls.</p>
+        <div class="mt-4 space-y-4">
+          <div class="p-4 border rounded-lg">
+            <h4 class="text-xl font-bold">Single Room</h4>
+            <p class="text-lg">Price: ₹10,000/month</p>
+            <p class="text-md text-gray-500">Ideal for individual privacy and comfort.</p>
+          </div>
+          <div class="p-4 border rounded-lg">
+            <h4 class="text-xl font-bold">Double Room</h4>
+            <p class="text-lg">Price: ₹8,000/month</p>
+            <p class="text-md text-gray-500">Shared with one roommate, cozy and affordable.</p>
+          </div>
+          <div class="p-4 border rounded-lg">
+            <h4 class="text-xl font-bold">Triple Room</h4>
+            <p class="text-lg">Price: ₹6,000/month</p>
+            <p class="text-md text-gray-500">Shared with two roommates, very economical.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Millennial Topaz Girls Hostel -->
+      <div class="rounded-lg shadow-lg p-6 border border-gray-300 bg-white hover:shadow-2xl transition-shadow duration-300">
+        <h3 class="text-3xl font-semibold text-gray-800">Millennial Topaz Girls Hostel</h3>
+        <p class="text-lg text-gray-600 mt-2">Affordable accommodation with excellent facilities.</p>
+        <div class="mt-4 space-y-4">
+          <div class="p-4 border rounded-lg">
+            <h4 class="text-xl font-bold">Single Room</h4>
+            <p class="text-lg">Price: ₹9,500/month</p>
+            <p class="text-md text-gray-500">Perfect for personal space and privacy.</p>
+          </div>
+          <div class="p-4 border rounded-lg">
+            <h4 class="text-xl font-bold">Double Room</h4>
+            <p class="text-lg">Price: ₹7,500/month</p>
+            <p class="text-md text-gray-500">Shared with one roommate, offering comfort and economy.</p>
+          </div>
+          <div class="p-4 border rounded-lg">
+            <h4 class="text-xl font-bold">Triple Room</h4>
+            <p class="text-lg">Price: ₹5,500/month</p>
+            <p class="text-md text-gray-500">Shared with two roommates, cost-effective option.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Millennial Blue Opas Boys Hostel -->
+      <div class="rounded-lg shadow-lg p-6 border border-gray-300 bg-white hover:shadow-2xl transition-shadow duration-300">
+        <h3 class="text-3xl font-semibold text-gray-800">Millennial Blue Opas Boys Hostel</h3>
+        <p class="text-lg text-gray-600 mt-2">Designed for boys with modern facilities and comfortable rooms.</p>
+        <div class="mt-4 space-y-4">
+          <div class="p-4 border rounded-lg">
+            <h4 class="text-xl font-bold">Single Room</h4>
+            <p class="text-lg">Price: ₹9,000/month</p>
+            <p class="text-md text-gray-500">Ensures privacy and comfort.</p>
+          </div>
+          <div class="p-4 border rounded-lg">
+            <h4 class="text-xl font-bold">Double Room</h4>
+            <p class="text-lg">Price: ₹7,000/month</p>
+            <p class="text-md text-gray-500">Ideal for two roommates, providing both comfort and affordability.</p>
+          </div>
+          <div class="p-4 border rounded-lg">
+            <h4 class="text-xl font-bold">Triple Room</h4>
+            <p class="text-lg">Price: ₹5,000/month</p>
+            <p class="text-md text-gray-500">Economical choice with a shared setting for three.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+        </div>
+      </div>  
+      <div id="sectionamenities">
+        <button class="btn btn-primary mt-4" onclick="display('section1')">go back</button>
+        <h2 class="section-title">AMENITIES</h2>
+    <div class="bg-white p-4 pb-6 rounded-lg shadow-md">
+      <p class="section-title text-black">Enjoy a range of amenities designed for comfort and convenience.</p>
+    </div>
+    <br>
+
+    <div class="amenities-grid grid grid-cols-1 md:grid-cols-3 gap-8">
+      <!-- Wi-Fi -->
+      <div class="amenity-card content-card card-hover">
+        <img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRXkdODaOx9wd6D17z3MxAoEP4giYbWCJwaHGDcIYcUXuBLWicc" alt="Wi-Fi" class="amenity-icon rounded-lg mx-auto" style="width: 130px; height: 130px;">
+        <h3 class="font-bold text-lg mt-4">High-Speed Wi-Fi</h3>
+        <p>Stay connected with unlimited high-speed internet.</p>
+      </div>
+
+      <!-- Laundry Service -->
+      <div class="amenity-card content-card card-hover">
+        <img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQciNC2gexrjOwuwppNWLFf27g_NUANVvTkPmrH3e6LiTTcSx56" alt="Laundry" class="amenity-icon rounded-lg mx-auto" style="width: 130px; height: 130px;">
+        <h3 class="font-bold text-lg mt-4">Laundry Service</h3>
+        <p>Convenient laundry services at your doorstep.</p>
+      </div>
+
+      <!-- Iron -->
+      <div class="amenity-card content-card card-hover">
+        <img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcSYI2S4_hkoLaSuyqpNDa-7rQwDCHWrcxsl4sQtbcLcEC_ET3EF" alt="Iron" class="amenity-icon rounded-lg mx-auto" style="width: 130px; height: 130px;">
+        <h3 class="font-bold text-lg mt-4">Iron</h3>
+        <p>Ironing facilities to keep your clothes wrinkle-free.</p>
+      </div>
+
+      <!-- Microwave -->
+      <div class="amenity-card content-card card-hover">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUlBhV7ZDLkDeiXDNkz2junzPRca5prTtedLSfSNmX0z2Lp4RK" alt="Microwave" class="amenity-icon rounded-lg mx-auto" style="width: 130px; height: 130px;">
+        <h3 class="font-bold text-lg mt-4">Microwave</h3>
+        <p>Quick and easy access to a microwave for meals.</p>
+      </div>
+
+      <!-- Induction Stove -->
+      <div class="amenity-card content-card card-hover">
+        <img src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcSiFu0dOm4Bnbmb77rSMjRRTNRfmHfFE_y4Zq4Xptg9RrTn1S9S" alt="Induction Stove" class="amenity-icon rounded-lg mx-auto" style="width: 130px; height: 130px;">
+        <h3 class="font-bold text-lg mt-4">Induction Stove</h3>
+        <p>Modern induction stoves available for cooking needs.</p>
+      </div>
+
+      <!-- Kettle -->
+      <div class="amenity-card content-card card-hover">
+        <img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcRn226csAUYAEeLw1IszdqBRSvd_nZw4OYGFxS6bFwG6d9e71vX" alt="Kettle" class="amenity-icon rounded-lg mx-auto" style="width: 130px; height: 130px;">
+        <h3 class="font-bold text-lg mt-4">Kettle</h3>
+        <p>Electric kettle for hot beverages anytime.</p>
+      </div>
+
+      <!-- Fridge -->
+      <div class="amenity-card content-card card-hover">
+        <img src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQDl5dvuI3XNecnaNdywOoOP_gb6YFl6xIA1r_Qu-lqdq-nd21m" alt="Fridge" class="amenity-icon rounded-lg mx-auto" style="width: 130px; height: 130px;">
+        <h3 class="font-bold text-lg mt-4">Fridge</h3>
+        <p>Refrigeration facilities to store perishables and drinks.</p>
+      </div>-
+    </div>
+
+          
+          
+        
+
+
+        
+      </div>
+      <div id="sectionmenu">
+        <button class="btn btn-primary mt-4" onclick="display('section1')">go back</button>
+        <div class="carousel-container">
+          <div class="carousel" id="carousel">
+              <div class="carousel-item">
+                  <img src="https://img.freepik.com/premium-photo/delicious-food-composition-delicious-food_1264538-6600.jpg?w=740" alt="Image 1" />
+              </div>
+              <div class="carousel-item">
+                  <img src="https://img.freepik.com/free-photo/delicious-food-table_23-2150857814.jpg?t=st=1730433747~exp=1730437347~hmac=69bb09bf22b1f9091c3971a86e28888a5ef591aef3d821919e72328243c0d695&w=1060" alt="Image 2" />
+              </div>
+              <div class="carousel-item">
+                  <img src="https://img.freepik.com/premium-photo/tray-food-including-tortillas-rice-rice_1293074-134073.jpg?w=996" alt="Image 3" />
+              </div>
+              <div class="carousel-item">
+                  <img src="https://img.freepik.com/premium-photo/tray-food-including-rice-rice-other-foods_1264538-6613.jpg?w=740" alt="Image 4" />
+              </div>
+              <div class="carousel-item">
+                  <img src="https://img.freepik.com/free-photo/healthy-meal-with-beef-rice-vegetables-generated-by-ai_188544-20448.jpg?t=st=1730434015~exp=1730437615~hmac=032ef7d7e4a9c1ba4092538b9a062e3d3736b53da329e62447c9b44fef5ea14b&w=1060" alt="Image 5" />
+              </div>
+              <div class="carousel-item">
+                  <img src="https://img.freepik.com/premium-photo/plate-food-including-rice-vegetables-rice_1264538-6544.jpg?w=740" alt="Image 6" />
+              </div>
+          </div>
+      </div>
+  
+      <div class="content">
+          <h2>Available Cuisines</h2>
+          <ul>
+              <li>North Indian</li>
+              <li>South Indian</li>
+              <li>Chinese</li>
+          </ul>
+  
+          <h3>Meals Offered</h3>
+          <ul>
+              <li>Breakfast</li>
+              <li>Lunch</li>
+              <li>Dinner</li>
+              <li>Snacks</li>
+          </ul>
+      </div>
+  
+      
+
+
+      </div>
+      <div id="sectionfacilities">
+        <button class="btn btn-primary mt-4" onclick="display('section1')">go back</button>
+        <div class="facilities-card">
+          <h2>Hostel Facilities</h2>
+          <ul>
+              <li>24/7 Security with CCTV Surveillance</li>
+              <li>Furnished Rooms with Beds, Study Tables, and Wardrobes</li>
+              <li>Common Room with TV and Indoor Games</li>
+              <li>Gym and Fitness Center</li>
+              <li>Mess and Dining Facilities</li>
+              <li>Laundry Services</li>
+              <li>Medical and First Aid Facilities</li>
+              <li>Recreational Areas</li>
+              <li>Library and Study Area</li>
+              <li>RO Drinking Water</li>
+              <li>Wi-Fi Connectivity</li>
+              <li>Induction Stove</li>
+              <li>Kettle</li>
+              <li>Iron</li>
+              <li>Microwave</li>
+              <li>Fridge</li>
+          </ul>
+      </div>
+
+
+      </div>
+      
+      
+    
+      
+  <script type="text/javascript" src="https://d1tgh8fmlzexmh.cloudfront.net/ccbp-static-website/js/ccbp-ui-kit.js">
+    let currentIndex = 0;
+        const carousel = document.getElementById("carousel");
+        const totalItems = document.querySelectorAll(".carousel-item").length;
+
+        function showNextImage() {
+            currentIndex = (currentIndex + 1) % totalItems;
+            const offset = -currentIndex * 100;
+            carousel.style.transform = translateX(${offset}%);
+        }
+
+        setInterval(showNextImage, 3000);
+  </script>
+
 </body>
+<script>
+  
+</script>
 </html>
